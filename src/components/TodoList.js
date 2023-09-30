@@ -6,9 +6,9 @@ export const TodoList = ({todos}) =>{
     <div>
    
     <div>TodoList</div>
-    <p>오늘할일의 리스트 존</p>
+    
     {/*<div>{todos}</div>*/}
-     {todos.map((todo) => <Todo todo={todo} key={todo}/>)}
+     {todos.map((todo) => <Todo todo={todo} key={todo.id}/>)}
     </div>
     );
 };
