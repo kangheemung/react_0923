@@ -1,13 +1,24 @@
 import React from "react";
 
-export const Todo =({ todo })=>{
+ const Todo =({ todo ,toggleTodo })=>{
+
+    const handleTodoClick = () => {
+        toggleTodo(todo.id);//todo.idは自分自身
+    };
+    
     return (
-        <div>
+      <div>
         <div>タスク</div>
         <label>
-        <input type= "checkbox" checked ={false} readOnly/>
+        <input 
+            type = "checkbox" 
+            checked ={todo.completed} 
+            readOnly
+            onChange = { handleTodoClick }
+        />
         </label>
         {todo.name}
-        </div>
-        );
+      </div>
+    );
 };
+export default Todo;
